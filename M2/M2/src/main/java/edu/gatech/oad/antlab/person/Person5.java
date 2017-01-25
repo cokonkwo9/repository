@@ -29,9 +29,11 @@ public class Person5 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private String calc(String input) {
+	private static String calc(String input) {
 	  //Person 5 put your implementation here
-	  return null;
+		String name = input.substring(2, input.length());
+
+	  	return name.concat(input.substring(0,2));
 	}
 	
 	/**
@@ -42,8 +44,10 @@ public class Person5 {
 	 * @return the string representing the 
 	 *         object
 	 */
-	public String toString(String input) {
+	public  String toString(String input) {
 	  return name + calc(input);
 	}
+
+
 
 }
