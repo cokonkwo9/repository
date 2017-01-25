@@ -17,7 +17,8 @@ public class Person1 {
 	 * @param pname the person's real name
 	 */
   public Person1(String pname) {
-    name = pname;
+
+  	name = ChikaOkonkwo;
   }
   	/**
 	 * This method should take the string
@@ -31,7 +32,9 @@ public class Person1 {
 	 */
 	private String calc(String input) {
 	  //Person 1 put your implementation here
-	  return null;
+		String in = input.substring(2, input.length());
+
+	  return in.concat(input.substring(0,2));
 	}
 	
 	/**
@@ -43,7 +46,8 @@ public class Person1 {
 	 *         object
 	 */
 	public String toString(String input) {
-	  return name + calc(input);
+
+		return name + calc(input);
 	}
 
 }
