@@ -30,8 +30,15 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+        String str = "";
+        int n = input.length();
+        Random rand = new Random();
+        for (int i = 0; i < n; i++) {
+            int x = rand.nextInt(n-i);
+            str = str + input.charAt(x);
+            input = input.substring(0,x) + input.substring(x + 1);
+        }
+        return str;
 	}
 	/**
 	 * Return a string rep of this object
@@ -44,4 +51,5 @@ public class Person2 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
+
 }
