@@ -30,8 +30,18 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      //Person 4 put your implementation here
-      return null;
+      //Person 4 put your implementation here   
+        if (input == null) {
+            throw new IllegalArgumentException("Input is null!");
+        }     
+        char[] nameArr = input.toCharArray();
+        for (int i = 0; i < nameArr.length; i++) {
+            int a = (int) nameArr[i];
+            a++;
+            nameArr[i] = (char) a; 
+        }
+        String newName = new String(nameArr);
+        return newName;
     }
     
     /**
@@ -45,6 +55,9 @@ public class Person4 {
     public String toString(String input) {
       return name + calc(input);
     }
+
+
+
 
 }
 
