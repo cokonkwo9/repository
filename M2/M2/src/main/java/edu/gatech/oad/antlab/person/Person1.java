@@ -18,7 +18,7 @@ public class Person1 {
 	 */
   public Person1(String pname) {
 
-  	name = ChikaOkonkwo;
+  	name = pname;
   }
   	/**
 	 * This method should take the string
