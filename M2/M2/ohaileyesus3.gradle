@@ -4,7 +4,7 @@ defaultTasks 'jar'
 
 jar{
     manifest {
-    attributes( "Class-Path": 'lib/resources.java',
+    attributes( "Class-Path": '../../lib/resources.jar',
                 "Main-Class": 'edu.gatech.oad.antlab.pkg1.AntLabMain')
     }
 }
