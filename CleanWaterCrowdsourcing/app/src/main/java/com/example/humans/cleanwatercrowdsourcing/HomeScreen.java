@@ -1,5 +1,6 @@
 package com.example.humans.cleanwatercrowdsourcing;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -33,6 +34,18 @@ public class HomeScreen extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home_screen, menu);
         return true;
+    }
+
+    //go to register screen
+    public void goToRegisterScreen(View view) {
+        Intent registerScreen = new Intent(HomeScreen.this, Register.class);
+        startActivity(registerScreen);
+    }
+
+    //go to login screen
+    public void goToLoginScreen(View view) {
+        Intent loginScreen = new Intent(HomeScreen.this, Login.class);
+        startActivity(loginScreen);
     }
 
     @Override

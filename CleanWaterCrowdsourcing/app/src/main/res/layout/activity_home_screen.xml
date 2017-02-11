@@ -21,8 +21,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_home_screen" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -30,5 +28,51 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editText" />
+
+    <include layout="@layout/content_home_screen" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/login_button"
+            android:layout_alignEnd="@+id/login_button"
+            android:layout_marginTop="35dp"
+            android:id="@+id/register_button"
+            android:onClick = "goToRegisterScreen" />
+
+        <Button
+            android:text="Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_button"
+            android:layout_marginTop="235dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:onClick = "goToLoginScreen"/>
+
+        <TextView
+            android:text="Clean Water Crowdsourcing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Title"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="125dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
