@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "245789982692",
+    "firebase_url": "https://water-crowdsourcing-database.firebaseio.com",
+    "project_id": "water-crowdsourcing-database",
+    "storage_bucket": "water-crowdsourcing-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245789982692:android:cee2d562cae5d87c",
+        "android_client_info": {
+          "package_name": "com.example.humans.cleanwatercrowdsourcing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245789982692-qkiauht56h7vub9muj2349qoohsucqi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [ { "current_key": XXX } ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
