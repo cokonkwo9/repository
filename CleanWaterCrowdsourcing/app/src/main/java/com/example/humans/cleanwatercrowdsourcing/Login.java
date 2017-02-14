@@ -3,6 +3,7 @@ package com.example.humans.cleanwatercrowdsourcing;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -62,6 +63,8 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
     private View mProgressView;
     private View mLoginFormView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +90,14 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
             @Override
             public void onClick(View view) {
                 attemptLogin();
+
+                if (isEmailValid(mEmailView.getText().toString()) && isPasswordValid(mPasswordView.getText().toString())) {
+                    Intent login = new Intent(Login.this, SuccessfulLogin.class);
+                    startActivity(login);
+
+                }
+
+
             }
         });
 
@@ -136,6 +147,8 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
             }
         }
     }
+
+
 
 
     /**
@@ -192,12 +205,12 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor> 
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return email.equals("user");
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.equals("pass");
     }
 
     /**
