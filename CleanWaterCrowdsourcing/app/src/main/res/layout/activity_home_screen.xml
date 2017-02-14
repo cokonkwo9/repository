@@ -37,8 +37,6 @@
         android:ems="10"
         android:id="@+id/editText" />
 
-    <include layout="@layout/content_home_screen" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
