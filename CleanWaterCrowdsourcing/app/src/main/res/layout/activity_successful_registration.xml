@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.humans.cleanwatercrowdsourcing.Register">
+    tools:context="com.example.humans.cleanwatercrowdsourcing.SuccessfulRegistration">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_register" />
+    <include layout="@layout/content_successful_registration" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -35,37 +35,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
+        <Button
+            android:text="Go Home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="126dp"
-            android:id="@+id/username"
-            android:hint="Email" />
+            android:layout_marginTop="166dp"
+            android:id="@+id/goHome" />
 
         <Button
-            android:text="Register"
+            android:text="Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/password"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="31dp"
-            android:id="@+id/registerButton"
-            android:onClick=""/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:layout_marginTop="31dp"
-            android:id="@+id/password"
-            android:hint="Password"
-            android:layout_below="@+id/username"
-            android:layout_alignStart="@+id/username" />
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/goHome"
+            android:id="@+id/goLogin" />
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

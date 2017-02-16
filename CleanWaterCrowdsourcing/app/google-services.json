@@ -1,32 +1,50 @@
 {
   "project_info": {
-    "project_number": "245789982692",
-    "firebase_url": "https://water-crowdsourcing-database.firebaseio.com",
-    "project_id": "water-crowdsourcing-database",
-    "storage_bucket": "water-crowdsourcing-database.appspot.com"
+    "project_number": "509040690533",
+    "firebase_url": "https://water-crowd-sourcing.firebaseio.com",
+    "project_id": "water-crowd-sourcing",
+    "storage_bucket": "water-crowd-sourcing.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:245789982692:android:cee2d562cae5d87c",
+        "mobilesdk_app_id": "1:509040690533:android:cee2d562cae5d87c",
         "android_client_info": {
           "package_name": "com.example.humans.cleanwatercrowdsourcing"
         }
       },
       "oauth_client": [
         {
-          "client_id": "245789982692-qkiauht56h7vub9muj2349qoohsucqi1.apps.googleusercontent.com",
+          "client_id": "509040690533-0r6vcoasq195tn11fk1jv531i5gjgdt1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.humans.cleanwatercrowdsourcing",
+            "certificate_hash": "F06DB29BB9638DCA0F65451D23965F123B4828E8"
+          }
+        },
+        {
+          "client_id": "509040690533-iv5i3tjfhntr5o8080vma8u6hkliqotp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
-      "api_key": [ { "current_key": XXX } ],
+      "api_key": [
+        {
+          //"current_key": "AIzaSyB9kro32dPINcsHM1xn_cJ4WXDhTs9HxlE"
+          "current_key": "AIzaSyA3jTe3dCbdF7uqfTPtsN3EhCJUunG9dug"
+        }
+      ],
       "services": {
         "analytics_service": {
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509040690533-iv5i3tjfhntr5o8080vma8u6hkliqotp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
