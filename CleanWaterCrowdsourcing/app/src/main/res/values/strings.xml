@@ -16,4 +16,5 @@
         completions."
     </string>
     <string name="title_activity_register">Register</string>
+    <string name="title_activity_successful_registration">SuccessfulRegistration</string>
 </resources>
