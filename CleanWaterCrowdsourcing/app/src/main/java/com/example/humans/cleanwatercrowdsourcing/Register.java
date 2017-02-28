@@ -12,9 +12,12 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +26,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Arrays;
+
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth fbAuthentication;
@@ -30,6 +35,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     private EditText password;
     private Button register_button;
     private ProgressDialog progressDialog;
+    private Spinner spinner;
+    ArrayAdapter<String> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +61,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         username =  ((EditText)findViewById(R.id.username));
         password = ((EditText)findViewById(R.id.password));
         register_button.setOnClickListener(this);
-
-
+        spinner = (Spinner) findViewById(R.id.spinner);
+        adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("User", "Worker", "Manager", "Admin"));
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
     }
 

@@ -19,7 +19,7 @@ public class SuccessfulLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.successful_login);
 
-        Toast.makeText(SuccessfulLogin.this, "Login Successful",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(SuccessfulLogin.this, "Login Successful",Toast.LENGTH_SHORT).show();
     }
 
 
@@ -30,6 +30,19 @@ public class SuccessfulLogin extends AppCompatActivity {
             Intent login = new Intent(SuccessfulLogin.this, HomeScreen.class);
             FirebaseAuth.getInstance().signOut();
             startActivity(login);
+
+        }
+
+    }
+
+
+    public void onEditProfile(View v) {
+
+        if (v.getId() == R.id.Beditprofile) {
+
+            Intent edit = new Intent(SuccessfulLogin.this, EditProfile.class);
+            FirebaseAuth.getInstance().signOut();
+            startActivity(edit);
 
         }
 

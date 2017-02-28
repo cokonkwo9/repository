@@ -46,16 +46,6 @@
             android:id="@+id/username"
             android:hint="Email" />
 
-        <Button
-            android:text="Register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/password"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="31dp"
-            android:id="@+id/registerButton"
-            android:onClick=""/>
-
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,6 +56,26 @@
             android:hint="Password"
             android:layout_below="@+id/username"
             android:layout_alignStart="@+id/username" />
+
+        <Button
+            android:text="Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/registerButton"
+            android:onClick=""
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="117dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/registerButton"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="43dp"
+            android:id="@+id/spinner" />
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
