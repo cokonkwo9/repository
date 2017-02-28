@@ -29,8 +29,7 @@
         <activity
             android:name=".Login"
             android:label="@string/title_activity_login" />
-        <activity android:name=".EditProfile"
-            ></activity>
+        <activity android:name=".EditProfile" />
         <activity
             android:name=".Register"
             android:label="@string/title_activity_register"
@@ -38,6 +37,22 @@
         <activity
             android:name=".SuccessfulRegistration"
             android:label="@string/title_activity_successful_registration"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".User"
+            android:label="@string/title_activity_user"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Worker"
+            android:label="@string/title_activity_worker"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Manager"
+            android:label="@string/title_activity_manager"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Administrator"
+            android:label="@string/title_activity_administrator"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

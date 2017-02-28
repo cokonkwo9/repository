@@ -37,6 +37,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     private ProgressDialog progressDialog;
     private Spinner spinner;
     ArrayAdapter<String> adapter;
+    
 
 
     @Override
