@@ -37,7 +37,6 @@ public class EditProfile extends AppCompatActivity {
         String email = Register.username.getText().toString();
 
         String userinfoString = "Username: " + email + "\n"
-
                                 + "Usertype: " + smalluserinfo.get("userType") + "\n"
                                 + "House Address: " + smalluserinfo.get("house address") + "\n"
                                 + "Location: " + smalluserinfo.get("location"); // should be "worker"
