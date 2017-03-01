@@ -2,6 +2,8 @@ package com.example.humans.cleanwatercrowdsourcing;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Bundle;
@@ -28,12 +30,23 @@ public class EditProfile extends AppCompatActivity {
 
 
         TextView userinfo = (TextView) findViewById(R.id.TVuserinfo);
-        String username = "a@b.com"; //FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        String username = Register.username.getText().toString();
 
         HashMap<String,String> smalluserinfo = (HashMap) bigUserInfo.get(username);
         String userinfoString = smalluserinfo.get("userType") + "\n"
                         + smalluserinfo.get("house address") + "\n"
                         + smalluserinfo.get("location"); // should be "worker"
+
+        EditText enterusertype = (EditText) findViewById(R.id.ETusertype);
+        enterusertype.setText(smalluserinfo.get("userType"), TextView.BufferType.EDITABLE);
+
+
+        EditText enterhouse = (EditText) findViewById(R.id.EThouseaddress);
+        enterhouse.setText(smalluserinfo.get("house address"), TextView.BufferType.EDITABLE);
+
+        EditText enterlocation = (EditText) findViewById(R.id.ETlocation);
+        enterlocation.setText(smalluserinfo.get("location"), TextView.BufferType.EDITABLE);
+
 
 
 
@@ -47,6 +60,28 @@ public class EditProfile extends AppCompatActivity {
      */
     public void onClickBack(View v) {
         if (v.getId() == R.id.BgoBack) {
+
+            String username = Register.username.getText().toString();
+            HashMap<String,String> smalluserinfo = (HashMap) bigUserInfo.get(username);
+
+
+
+            EditText enterusertype = (EditText) findViewById(R.id.ETusertype);
+            String newusertype = enterusertype.getText().toString();
+            smalluserinfo.put("userType", newusertype);
+
+            EditText enterhouse = (EditText) findViewById(R.id.EThouseaddress);
+            String newhouse = enterhouse.getText().toString();
+            smalluserinfo.put("house address", newhouse);
+
+            EditText enterlocation = (EditText) findViewById(R.id.ETlocation);
+            String newlocation = enterlocation.getText().toString();
+            smalluserinfo.put("location", newlocation);
+
+
+
+
+
             Intent back = new Intent(EditProfile.this, SuccessfulLogin.class);
             FirebaseAuth.getInstance().signOut();
             startActivity(back);

@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,11 +35,12 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth fbAuthentication;
-    private EditText username;
+    public static EditText username;
     private EditText password;
     private Button register_button;
     private ProgressDialog progressDialog;
     private Spinner spinner;
+
     private FirebaseAnalytics mFirebaseAnalytics;
     public static HashMap<String, Map<String, String>> bigUserInfo;
 
@@ -111,10 +113,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
-                            String user_type = "UserType: " + spinner.getSelectedItem().toString();
-                            String house_address = "House Address: ";
-                            String location = "Location: ";
+                            String user_type = spinner.getSelectedItem().toString();
+                            String house_address = "";
+                            String location = "";
 
                             HashMap<String,String> smallUserInfo = new HashMap<String, String>();
                             smallUserInfo.put("userType", user_type);
@@ -123,6 +124,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
                             bigUserInfo.put(usernameText,smallUserInfo);
                             //System.out.println(bigUserInfo.get(usernameText).get("userType"));
+
 
                             Toast.makeText(Register.this, "Registration Successful",Toast.LENGTH_SHORT).show();
                             progressDialog.cancel();
