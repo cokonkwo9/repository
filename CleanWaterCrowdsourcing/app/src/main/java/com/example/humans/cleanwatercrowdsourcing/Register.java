@@ -44,6 +44,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
 
     ArrayAdapter<String> adapter;
+    
 
 
     @Override

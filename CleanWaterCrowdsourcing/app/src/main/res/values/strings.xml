@@ -17,4 +17,8 @@
     </string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_successful_registration">SuccessfulRegistration</string>
+    <string name="title_activity_user">User</string>
+    <string name="title_activity_worker">Worker</string>
+    <string name="title_activity_manager">Manager</string>
+    <string name="title_activity_administrator">Administrator</string>
 </resources>
