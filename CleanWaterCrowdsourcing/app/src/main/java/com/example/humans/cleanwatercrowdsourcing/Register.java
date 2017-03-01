@@ -22,11 +22,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
@@ -36,12 +39,25 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     private Button register_button;
     private ProgressDialog progressDialog;
     private Spinner spinner;
+    private FirebaseAnalytics mFirebaseAnalytics;
+    public static HashMap<String, Map<String, String>> bigUserInfo;
+
+
     ArrayAdapter<String> adapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        bigUserInfo = new HashMap<>();
+
+
+
+       //mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         setContentView(R.layout.activity_register);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,7 +87,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
 
     public void register () {
-        String usernameText = username.getText().toString().trim();
+        final String usernameText = username.getText().toString().trim();
         String passwordText = password.getText().toString().trim();
 
         // username is empty
@@ -86,11 +102,25 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         progressDialog.setMessage("Registering . . .");
         progressDialog.show();
 
+
         fbAuthentication.createUserWithEmailAndPassword(usernameText,passwordText)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+
+                            String user_type = "UserType: " + spinner.getSelectedItem().toString();
+                            String house_address = "House Address: ";
+                            String location = "Location: ";
+
+                            HashMap<String,String> smallUserInfo = new HashMap<String, String>();
+                            smallUserInfo.put("userType", user_type);
+                            smallUserInfo.put("house address", house_address);
+                            smallUserInfo.put("location", location);
+
+                            bigUserInfo.put(usernameText,smallUserInfo);
+                            //System.out.println(bigUserInfo.get(usernameText).get("userType"));
+
                             Toast.makeText(Register.this, "Registration Successful",Toast.LENGTH_SHORT).show();
                             progressDialog.cancel();
                             Intent registerSuccess = new Intent(Register.this, SuccessfulRegistration.class);
