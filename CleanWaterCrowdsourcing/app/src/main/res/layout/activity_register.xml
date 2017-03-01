@@ -76,6 +76,15 @@
             android:layout_marginBottom="43dp"
             android:id="@+id/spinner" />
 
+        <TextView
+            android:text="Select User Type:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/spinner"
+            android:layout_alignStart="@+id/spinner"
+            android:layout_marginBottom="11dp"
+            android:id="@+id/TVselecttype" />
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

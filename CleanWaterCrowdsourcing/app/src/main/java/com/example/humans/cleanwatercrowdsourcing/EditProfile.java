@@ -33,9 +33,14 @@ public class EditProfile extends AppCompatActivity {
         String username = Register.username.getText().toString();
 
         HashMap<String,String> smalluserinfo = (HashMap) bigUserInfo.get(username);
-        String userinfoString = smalluserinfo.get("userType") + "\n"
-                        + smalluserinfo.get("house address") + "\n"
-                        + smalluserinfo.get("location"); // should be "worker"
+
+        String email = Register.username.getText().toString();
+
+        String userinfoString = "Username: " + email + "\n"
+
+                                + "Usertype: " + smalluserinfo.get("userType") + "\n"
+                                + "House Address: " + smalluserinfo.get("house address") + "\n"
+                                + "Location: " + smalluserinfo.get("location"); // should be "worker"
 
         EditText enterusertype = (EditText) findViewById(R.id.ETusertype);
         enterusertype.setText(smalluserinfo.get("userType"), TextView.BufferType.EDITABLE);
