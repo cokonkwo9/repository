@@ -86,7 +86,9 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     }
 
 
-
+    /**
+     * method for registering new users
+     */
     public void register () {
         final String usernameText = username.getText().toString().trim();
         String passwordText = password.getText().toString().trim();

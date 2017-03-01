@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SuccessfulLogin extends AppCompatActivity {
     FirebaseAuth fbAuth;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.successful_login);
@@ -22,7 +23,10 @@ public class SuccessfulLogin extends AppCompatActivity {
         //Toast.makeText(SuccessfulLogin.this, "Login Successful",Toast.LENGTH_SHORT).show();
     }
 
-
+    /**
+     * method for logging out
+     * @param v - current view
+     */
     public void onLogout(View v) {
 
         if (v.getId() == R.id.Blogout) {
@@ -35,7 +39,10 @@ public class SuccessfulLogin extends AppCompatActivity {
 
     }
 
-
+    /**
+     * method for switching to edit profile pag
+     * @param v - current view
+     */
     public void onEditProfile(View v) {
 
         if (v.getId() == R.id.Beditprofile) {
