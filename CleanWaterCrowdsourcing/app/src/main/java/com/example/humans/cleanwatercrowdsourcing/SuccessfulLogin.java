@@ -55,7 +55,10 @@ public class SuccessfulLogin extends AppCompatActivity {
 
     }
 
-
+    /**
+     * method for creating a water report
+     * @param v - current view
+     */
 
     public void onCreateReport(View v) {
 
