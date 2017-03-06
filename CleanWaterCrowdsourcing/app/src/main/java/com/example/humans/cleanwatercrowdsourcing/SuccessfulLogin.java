@@ -54,5 +54,19 @@ public class SuccessfulLogin extends AppCompatActivity {
         }
 
     }
+
+
+
+    public void onCreateReport(View v) {
+
+        if (v.getId() == R.id.Bcreatereport) {
+
+            Intent createReport = new Intent(SuccessfulLogin.this, CreateReport.class);
+            FirebaseAuth.getInstance().signOut();
+            startActivity(createReport);
+
+        }
+
+    }
 }
 
