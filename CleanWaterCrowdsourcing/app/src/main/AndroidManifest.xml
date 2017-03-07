@@ -56,9 +56,8 @@
             android:name=".Administrator"
             android:label="@string/title_activity_administrator"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".CreateReport">
-
-        </activity>
+        <activity android:name=".CreateReport"></activity>
+        <activity android:name=".ViewReports"></activity>
     </application>
 
 </manifest>

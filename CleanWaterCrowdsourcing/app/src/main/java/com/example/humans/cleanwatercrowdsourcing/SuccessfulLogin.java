@@ -71,5 +71,23 @@ public class SuccessfulLogin extends AppCompatActivity {
         }
 
     }
+
+    /**
+     * method for viewing all water reports
+     * @param v - current view
+     */
+
+    public void onViewReports(View v) {
+
+        if (v.getId() == R.id.Bviewreports) {
+
+            Intent createReport = new Intent(SuccessfulLogin.this, ViewReports.class);
+            FirebaseAuth.getInstance().signOut();
+            startActivity(createReport);
+
+        }
+
+    }
+
 }
 

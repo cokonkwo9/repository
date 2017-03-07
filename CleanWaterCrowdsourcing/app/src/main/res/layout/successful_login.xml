@@ -42,4 +42,14 @@
         android:id="@+id/Bcreatereport"
         android:onClick="onCreateReport" />
 
+    <Button
+        android:text="View Reports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Bcreatereport"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/Bviewreports"
+        android:onClick="onViewReports" />
+
 </RelativeLayout>
