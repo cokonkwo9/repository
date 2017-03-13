@@ -149,7 +149,6 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
 
 
 
-
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
             return;

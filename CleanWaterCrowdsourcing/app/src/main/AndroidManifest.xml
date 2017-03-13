@@ -3,6 +3,16 @@
     package="com.example.humans.cleanwatercrowdsourcing">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission android:name="com.example.humans.cleanwatercrowdsourcing.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.example.humans.cleanwatercrowdsourcing.MAPS_RECEIVE" />
+
+    <uses-permission android:name="com.google.android.providers.gsf.permissions.READ_GSERVICES" />
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -58,6 +68,12 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".CreateReport"></activity>
         <activity android:name=".ViewReports"></activity>
+
+        <meta-data android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBzokohu9FNkuNcUG0Sr0hRrBW8uehAirA" />
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
     </application>
 
 </manifest>
