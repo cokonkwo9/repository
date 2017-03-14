@@ -89,5 +89,24 @@ public class SuccessfulLogin extends AppCompatActivity {
 
     }
 
+
+
+
+    /**
+     * method for viewing map
+     * @param v - current view
+     */
+    public void onViewMap(View v) {
+
+        if (v.getId() == R.id.Bviewmap) {
+
+            Intent viewmap = new Intent(SuccessfulLogin.this, ViewMap.class);
+            FirebaseAuth.getInstance().signOut();
+            startActivity(viewmap);
+
+        }
+
+    }
+
 }
 

@@ -52,4 +52,14 @@
         android:id="@+id/Bviewreports"
         android:onClick="onViewReports" />
 
+    <Button
+        android:text="View Map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Bcreatereport"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/Bviewmap"
+        android:onClick="onViewMap" />
+
 </RelativeLayout>
