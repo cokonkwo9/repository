@@ -3,6 +3,7 @@ package com.example.humans.cleanwatercrowdsourcing;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -36,12 +37,12 @@ public class ViewMap extends AppCompatActivity implements OnMapReadyCallback {
         for (int i = 0; i < CreateReport.waterReports.size(); i++){
             //waterSources.add(new LatLng(33,-84));//]);
 
-            String rep  = "Report ID: " + CreateReport.waterReports.get(i)[0] + "\n"
-                    + "Reporter: " + CreateReport.waterReports.get(i)[1] + "\n"
-                    + "Time: " + CreateReport.waterReports.get(i)[2] + "\n"
-                    + "Location: " +  CreateReport.waterReports.get(i)[3] + "\n"
-                    + "Water Type: " +  CreateReport.waterReports.get(i)[4] + "\n"
-                    + "Water Condition: " +  CreateReport.waterReports.get(i)[5] + "\n \n";
+            String rep  = //"Report ID: " + CreateReport.waterReports.get(i)[0] + ", "
+                    //+ "Reporter: " + CreateReport.waterReports.get(i)[1] + ", "
+                    //+ "Time: " + CreateReport.waterReports.get(i)[2] + ", "
+                    //+ "Location: " +  CreateReport.waterReports.get(i)[3] + ", " +
+                    "Water Type: " +  CreateReport.waterReports.get(i)[4] + ", "
+                    + "Water Condition: " +  CreateReport.waterReports.get(i)[5];
 
             List<String> coords = Arrays.asList(CreateReport.waterReports.get(i)[3].toString().split(", "));
             int xcoord = Integer.parseInt(coords.get(0));
@@ -55,7 +56,7 @@ public class ViewMap extends AppCompatActivity implements OnMapReadyCallback {
 
         }
 
-
+        mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(waterSources.get(waterSources.size() - 1), 6));
 //        for (int i = 0; i < waterSources.size(); i++) {
 //            mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(waterSources.get(i), 15));
 //        }
