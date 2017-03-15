@@ -30,6 +30,7 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:9.6.0'
     testCompile 'junit:junit:4.12'
 
+    compile 'com.google.android.gms:play-services-maps:9.6.0'
 }
 
 //For firebase
