@@ -1,10 +1,10 @@
 package com.example.humans.cleanwatercrowdsourcing;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -15,8 +15,6 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-
-import static com.example.humans.cleanwatercrowdsourcing.R.id.spinner;
 
 /**
  * Created by omegahaileyesus on 3/6/17.
@@ -31,6 +29,7 @@ public class CreateReport extends AppCompatActivity {
     public static ArrayList<Object[]> waterReports = new ArrayList<Object[]>();
     private Spinner waterconditionspinner;
     private Spinner watertypespinner;
+    public static final String SAVENAME = "MySavedReports";
 
 
 
@@ -71,8 +70,31 @@ public class CreateReport extends AppCompatActivity {
             newreport[3] = location.getText();
             newreport[4] = watertypespinner.getSelectedItem().toString();
             newreport[5] = waterconditionspinner.getSelectedItem().toString();
-
             waterReports.add(newreport);
+
+            //SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
+            //String allreports = loadReports.getString("Water Reports", "");
+
+            String allreports = "";
+            for (int i = 0; i < CreateReport.waterReports.size(); i++){
+                allreports += "\n"
+                        + "Report ID: " + CreateReport.waterReports.get(i)[0] + "\n"
+                        + "Reporter: " + CreateReport.waterReports.get(i)[1] + "\n"
+                        + "Time: " + CreateReport.waterReports.get(i)[2] + "\n"
+                        + "Location: " +  CreateReport.waterReports.get(i)[3] + "\n"
+                        + "Water Type: " +  CreateReport.waterReports.get(i)[4] + "\n"
+                        + "Water Condition: " +  CreateReport.waterReports.get(i)[5] + "\n \n";
+            }
+
+
+
+            SharedPreferences saveReports = getSharedPreferences(SAVENAME, MODE_PRIVATE);
+            SharedPreferences.Editor editor = saveReports.edit();
+
+            editor.putString("Water Reports", allreports);
+            editor.apply();
+
+
 
 
 
