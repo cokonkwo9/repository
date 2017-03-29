@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +19,9 @@ import java.util.Arrays;
 public class ViewHistoryGraph extends AppCompatActivity {
 
     private Spinner graphtypespinner;
+
+    public static String graphtype;
+    public static String graphyear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,13 @@ public class ViewHistoryGraph extends AppCompatActivity {
      */
     public void onDisplayGraph(View v) {
         if (v.getId() == R.id.Bdisplaygraph) {
+
+            graphtype = graphtypespinner.getSelectedItem().toString();
+            EditText yeartext = (EditText) findViewById(R.id.ETyear);
+
+            graphyear = yeartext.getText().toString();
+
+
 
             Intent display = new Intent(ViewHistoryGraph.this, DisplayGraph.class);
             FirebaseAuth.getInstance().signOut();

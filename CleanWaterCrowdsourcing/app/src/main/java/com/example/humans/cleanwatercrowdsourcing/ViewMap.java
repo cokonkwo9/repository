@@ -55,12 +55,6 @@ public class ViewMap extends AppCompatActivity implements OnMapReadyCallback {
 
         for (int i = 0; i < numofReports; i++){
 
-
-
-
-
-
-
             String rep  = //"Report ID: " + CreateReport.waterReports.get(i)[0] + ", "
                     //+ "Reporter: " + CreateReport.waterReports.get(i)[1] + ", "
                     //+ "Time: " + CreateReport.waterReports.get(i)[2] + ", "

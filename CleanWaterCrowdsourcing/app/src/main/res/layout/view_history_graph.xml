@@ -49,5 +49,6 @@
      android:layout_below="@+id/TVyear"
      android:layout_alignStart="@+id/TVyear"
      android:layout_marginTop="13dp"
-     android:id="@+id/ETyear" />
+     android:id="@+id/ETyear"
+     android:text="2017" />
 </RelativeLayout>

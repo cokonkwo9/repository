@@ -69,18 +69,36 @@ public class CreatePurityReport extends AppCompatActivity {
             String time = loadReports.getString("Time: ", "");
             String waterLocation = loadReports.getString("Location: ", "");
             String waterCondition = loadReports.getString("Water Condition: ", "");
-            String virusPPM = loadReports.getString("Virus PPM", "");
-            String contamPPM = loadReports.getString("Contaminant PPM", "");
+            String virusPPM = loadReports.getString("Virus PPM: ", "");
+            String contamPPM = loadReports.getString("Contaminant PPM: ", "");
 
 
             numofReports++;
             reportID += numofReports + ", ";
+
+            System.out.println("reportID = " + reportID);
+
+
+
             reporter += Login.mEmailView.getText().toString() + ", ";
+            System.out.println("reporter = " + reporter);
+
+
             time += DateFormat.getDateTimeInstance().format(new Date()) + "; ";
+            System.out.println("time = " + time);
+
+
             waterLocation += location.getText() + "; ";
+            System.out.println("waterLocation = " + waterLocation);
+
             waterCondition += waterconditionspinner.getSelectedItem().toString() + ", ";
+            System.out.println("waterCondition = " + waterCondition);
+
             virusPPM += viruscount.getText().toString() + ", ";
+            System.out.println("virusPPM = " + virusPPM);
+
             contamPPM += contamcount.getText().toString() + ", ";
+            System.out.println("contamPPM = " + contamPPM);
 
 
             String[] reportIds = reportID.split(", ");
@@ -121,8 +139,12 @@ public class CreatePurityReport extends AppCompatActivity {
             editor.putString("Time: ", time);
             editor.putString("Location: ", waterLocation);
             editor.putString("Water Condition: ", waterCondition);
-            editor.putString("Virus PPM", virusPPM);
-            editor.putString("Contaminant PPM", contamPPM);
+
+
+            System.out.println("virusPPM = " + virusPPM);
+
+            editor.putString("Virus PPM: ", virusPPM);
+            editor.putString("Contaminant PPM: ", contamPPM);
 
             editor.apply();
 
