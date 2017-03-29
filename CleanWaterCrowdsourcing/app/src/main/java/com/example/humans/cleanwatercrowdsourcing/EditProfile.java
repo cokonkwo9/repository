@@ -4,10 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Arrays;
 
 /**
  * Created by omegahaileyesus on 2/28/17.
@@ -17,6 +21,9 @@ public class EditProfile extends AppCompatActivity {
 
     public static String address;
     public static String location;
+    public Spinner spusertype;
+    public ArrayAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +43,32 @@ public class EditProfile extends AppCompatActivity {
 //                                + "House Address: " + smalluserinfo.get("house address") + "\n"
 //                                + "Location: " + smalluserinfo.get("location"); // should be "worker"
 //
-        EditText enterusertype = (EditText) findViewById(R.id.ETusertype);
+        //EditText enterusertype = (EditText) findViewById(R.id.ETusertype);
+
+        spusertype = (Spinner) findViewById(R.id.SPusertype);
+
+
+        if (Login.usertype.equals("User")){
+            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("User", "Worker", "Manager", "Admin"));
+
+        } else if (Login.usertype.equals("Worker")){
+            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Worker", "User", "Manager", "Admin"));
+
+        } else if (Login.usertype.equals("Manager")){
+            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Manager", "User", "Worker", "Admin"));
+
+        } else {
+            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Admin", "User", "Worker", "Manger"));
+
+        }
+
+
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spusertype.setAdapter(adapter);
+
 //        enterusertype.setText(smalluserinfo.get("userType"), TextView.BufferType.EDITABLE);
-        enterusertype.setText(Login.usertype);
+        //enterusertype.setText(Login.usertype);
 //
 //
         EditText enterhouse = (EditText) findViewById(R.id.EThouseaddress);
@@ -80,8 +110,9 @@ public class EditProfile extends AppCompatActivity {
 //            String newlocation = enterlocation.getText().toString();
 //            smalluserinfo.put("location", newlocation);
 
-            EditText enterusertype = (EditText) findViewById(R.id.ETusertype);
-            Login.usertype = enterusertype.getText().toString();
+            //EditText enterusertype = (EditText) findViewById(R.id.ETusertype);
+            //Login.usertype = enterusertype.getText().toString();
+            Login.usertype = spusertype.getSelectedItem().toString();
 
             EditText enterhouse = (EditText) findViewById(R.id.EThouseaddress);
             EditProfile.address = enterhouse.getText().toString();

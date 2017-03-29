@@ -25,16 +25,6 @@
         android:layout_alignParentStart="true"
         android:text="Usertype: " />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="14dp"
-        android:id="@+id/ETusertype"
-        android:layout_below="@+id/TVusertypetag"
-        android:layout_alignStart="@+id/TVuserinfo" />
-
     <TextView
         android:text="Usertype:"
         android:layout_width="wrap_content"
@@ -45,16 +35,6 @@
         android:layout_below="@+id/BgoBack"
         android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/TVhouseaddress"
-        android:layout_alignStart="@+id/ETusertype"
-        android:layout_marginTop="14dp"
-        android:id="@+id/EThouseaddress" />
-
     <TextView
         android:text="Location:"
         android:layout_width="wrap_content"
@@ -64,6 +44,33 @@
         android:layout_marginTop="23dp"
         android:id="@+id/TVLocation" />
 
+    <TextView
+        android:text="House Address:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:id="@+id/TVhouseaddress"
+        android:layout_below="@+id/TVusertypetag"
+        android:layout_alignStart="@+id/TVusertypetag" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SPusertype"
+        android:layout_below="@+id/TVusertypetag"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="14dp"
+        android:id="@+id/EThouseaddress"
+        android:layout_below="@+id/TVhouseaddress"
+        android:layout_alignParentStart="true" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,14 +79,5 @@
         android:layout_marginTop="25dp"
         android:id="@+id/ETlocation"
         android:layout_below="@+id/TVLocation"
-        android:layout_alignStart="@+id/EThouseaddress" />
-
-    <TextView
-        android:text="House Address:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/TVhouseaddress"
-        android:layout_below="@+id/ETusertype"
-        android:layout_alignStart="@+id/TVusertypetag" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
