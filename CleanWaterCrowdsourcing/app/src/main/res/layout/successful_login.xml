@@ -71,4 +71,23 @@
         android:id="@+id/Bhistory"
         android:onClick="onViewHistory" />
 
+    <Button
+        android:text="Create \n Purity report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Bviewreports"
+        android:layout_alignEnd="@+id/Bhistory"
+        android:layout_marginBottom="61dp"
+        android:id="@+id/Bcreatepurity"
+        android:onClick="onCreatePurity" />
+
+    <Button
+        android:text="View \n purity reports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Bviewpurity"
+        android:layout_above="@+id/Bviewreports"
+        android:layout_alignStart="@+id/Bcreatepurity"
+        android:onClick="onViewPurity" />
+
 </RelativeLayout>

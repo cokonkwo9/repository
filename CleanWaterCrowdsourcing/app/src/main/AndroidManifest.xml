@@ -70,6 +70,8 @@
         <activity android:name=".ViewReports"></activity>
         <activity android:name=".ViewMap"></activity>
         <activity android:name=".ViewHistoryGraph"></activity>
+        <activity android:name=".CreatePurityReport"></activity>
+        <activity android:name="ViewPurityReport"></activity>
 
         <meta-data android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBzokohu9FNkuNcUG0Sr0hRrBW8uehAirA" />

@@ -117,8 +117,6 @@ public class SuccessfulLogin extends AppCompatActivity {
 
         if (v.getId() == R.id.Bhistory) {
 
-            //HashMap<String,String> smalluserinfo = (HashMap) bigUserInfo.get(username);
-
             if (Login.usertype.equals("Manager") || Login.usertype.equals("Admin")) {
 
                 Intent viewhistory = new Intent(SuccessfulLogin.this, ViewHistoryGraph.class);
@@ -127,6 +125,51 @@ public class SuccessfulLogin extends AppCompatActivity {
             } else{
                 Toast.makeText(SuccessfulLogin.this, "No Access",Toast.LENGTH_SHORT).show();
             }
+
+        }
+
+    }
+
+
+
+    /**
+     * method for creating purity report
+     * @param v - current view
+     */
+    public void onCreatePurity(View v) {
+
+        if (v.getId() == R.id.Bcreatepurity) {
+
+            if (!(Login.usertype.equals("User"))) {
+                Intent createp = new Intent(SuccessfulLogin.this, CreatePurityReport.class);
+                FirebaseAuth.getInstance().signOut();
+                startActivity(createp);
+            } else{
+                Toast.makeText(SuccessfulLogin.this, "No Access",Toast.LENGTH_SHORT).show();
+            }
+
+
+        }
+
+    }
+
+
+    /**
+     * method for viewing purity reports
+     * @param v - current view
+     */
+    public void onViewPurity(View v) {
+
+        if (v.getId() == R.id.Bviewpurity) {
+
+            if (!(Login.usertype.equals("User"))) {
+                Intent viewp = new Intent(SuccessfulLogin.this, ViewPurityReport.class);
+                FirebaseAuth.getInstance().signOut();
+                startActivity(viewp);
+            } else{
+                Toast.makeText(SuccessfulLogin.this, "No Access",Toast.LENGTH_SHORT).show();
+            }
+
 
         }
 
