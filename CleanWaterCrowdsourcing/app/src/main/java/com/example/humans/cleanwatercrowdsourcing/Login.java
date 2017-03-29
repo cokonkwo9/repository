@@ -72,6 +72,8 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
     private FirebaseAuth firebaseAuth;
     public static String usertype;
     public Spinner spinner;
+    public static String username;
+
 
 
 
@@ -112,6 +114,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
 
     private void login() {
         String usernameText = mEmailView.getText().toString().trim();
+        username = usernameText;
         String passwordText = mPasswordView.getText().toString().trim();
 
         // username is empty
