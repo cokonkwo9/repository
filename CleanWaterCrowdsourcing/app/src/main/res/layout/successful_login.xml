@@ -78,7 +78,7 @@
         android:layout_above="@+id/Bviewreports"
         android:layout_alignEnd="@+id/Bhistory"
         android:layout_marginBottom="61dp"
-        android:id="@+id/Bcreatepurity"
+        android:id="@+id/Bsubmitpurity"
         android:onClick="onCreatePurity" />
 
     <Button
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/Bviewpurity"
         android:layout_above="@+id/Bviewreports"
-        android:layout_alignStart="@+id/Bcreatepurity"
+        android:layout_alignStart="@+id/Bsubmitpurity"
         android:onClick="onViewPurity" />
 
 </RelativeLayout>

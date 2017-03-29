@@ -138,7 +138,7 @@ public class SuccessfulLogin extends AppCompatActivity {
      */
     public void onCreatePurity(View v) {
 
-        if (v.getId() == R.id.Bcreatepurity) {
+        if (v.getId() == R.id.Bsubmitpurity) {
 
             if (!(Login.usertype.equals("User"))) {
                 Intent createp = new Intent(SuccessfulLogin.this, CreatePurityReport.class);
