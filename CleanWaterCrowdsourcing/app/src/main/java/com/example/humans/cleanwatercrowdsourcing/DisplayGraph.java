@@ -3,6 +3,7 @@ package com.example.humans.cleanwatercrowdsourcing;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -23,6 +24,12 @@ public class DisplayGraph extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.display_graph);
+
+        TextView graphtitle = (TextView) findViewById(R.id.TVgraphtitle);
+        String text = graphtype + " (PPM) vs Time (Months)";
+        graphtitle.setText(text);
+
+
 
         double[] virusdata = new double[12];
         double[] contamdata = new double[12];
