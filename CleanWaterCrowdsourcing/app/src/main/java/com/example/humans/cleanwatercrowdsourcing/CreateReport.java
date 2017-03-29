@@ -75,9 +75,6 @@ public class CreateReport extends AppCompatActivity {
             SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
 
 
-
-
-
             int numofReports = loadReports.getInt("number of reports", 0);
             String allreports = loadReports.getString("Water Reports", "");
             String reportID = loadReports.getString("Report ID: ", "");
@@ -105,6 +102,9 @@ public class CreateReport extends AppCompatActivity {
 
 
             for (int i = 0; i < reportIds.length; i++){
+
+
+
                 allreports += "\n"
                         + "Report ID: " + reportIds[i] + "\n"
                         + "Reporter: " + reporters[i] + "\n"

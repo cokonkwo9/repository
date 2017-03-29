@@ -3,43 +3,37 @@ package com.example.humans.cleanwatercrowdsourcing;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
-
+import android.app.ProgressDialog;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -76,6 +70,8 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    public static String usertype;
+    public Spinner spinner;
 
 
 
@@ -92,6 +88,12 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
         loginButton.setOnClickListener(this);
         progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
+
+
+        spinner = (Spinner) findViewById(R.id.SPtype);
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Manager", "Worker", "User", "Admin"));
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         //TODO
         //Have a way to verify if user is already currently logged in
@@ -130,6 +132,10 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if (task.isSuccessful()) {
+
+                            usertype = spinner.getSelectedItem().toString();
+
+
                             Toast.makeText(Login.this, "Login Successful",Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
                             Intent loginSuccess = new Intent(Login.this, SuccessfulLogin.class);

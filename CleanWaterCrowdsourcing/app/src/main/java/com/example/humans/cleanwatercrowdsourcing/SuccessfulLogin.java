@@ -108,5 +108,29 @@ public class SuccessfulLogin extends AppCompatActivity {
 
     }
 
+
+    /**
+     * method for viewing history graph
+     * @param v - current view
+     */
+    public void onViewHistory(View v) {
+
+        if (v.getId() == R.id.Bhistory) {
+
+            //HashMap<String,String> smalluserinfo = (HashMap) bigUserInfo.get(username);
+
+            if (Login.usertype.equals("Manager") || Login.usertype.equals("Admin")) {
+
+                Intent viewhistory = new Intent(SuccessfulLogin.this, ViewHistoryGraph.class);
+                FirebaseAuth.getInstance().signOut();
+                startActivity(viewhistory);
+            } else{
+                Toast.makeText(SuccessfulLogin.this, "No Access",Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+    }
+
 }
 

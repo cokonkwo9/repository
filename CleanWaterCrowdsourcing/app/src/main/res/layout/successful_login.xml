@@ -62,4 +62,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:text="View History Graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Bviewreports"
+        android:layout_alignEnd="@+id/Bviewmap"
+        android:id="@+id/Bhistory"
+        android:onClick="onViewHistory" />
+
 </RelativeLayout>
