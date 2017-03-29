@@ -3,6 +3,7 @@ package com.example.humans.cleanwatercrowdsourcing;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 /**
@@ -16,17 +17,28 @@ public class ViewReports extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_reports);
 
-
         SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
-        String allreports = loadReports.getString("Water Reports", "");
+        //loadReports.edit().clear().commit();
 
-        //System.out.println("swag = " + swag);
+
+        String allreports = loadReports.getString("all reports", "");
+
+        int numofReports = loadReports.getInt("number of reports", 0);
+
+        String reportID = loadReports.getString("Report ID: ", "");
+        String reporter = loadReports.getString("Reporter: ", "");
+        String time = loadReports.getString("Time: ", "");
+        String waterLocation = loadReports.getString("Location: ", "");
+        String waterType = loadReports.getString("Water Type: " , "");
+        String waterCondition = loadReports.getString("Water Condition: ", "");
 
 
 
 
 
         TextView reports = (TextView) findViewById(R.id.TVreports);
+        reports.setMovementMethod(new ScrollingMovementMethod());
+
 //        String allreports = "";
 //        if (CreateReport.waterReports.size() == 0) {
 //            reports.setText("No reports have been submitted yet.");

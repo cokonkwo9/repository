@@ -59,7 +59,7 @@
         android:id="@+id/SPwatercondition" />
 
     <Button
-        android:text="Submit"
+        android:text="Save Data \n and \n Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

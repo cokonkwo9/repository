@@ -33,17 +33,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Create Report"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="26dp"
-        android:id="@+id/Bcreatereport"
-        android:onClick="onCreateReport" />
-
-    <Button
-        android:text="View Reports"
+        android:text="Load Data \n and \n View Reports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/Bcreatereport"
@@ -61,5 +51,15 @@
         android:layout_marginEnd="14dp"
         android:id="@+id/Bviewmap"
         android:onClick="onViewMap" />
+
+    <Button
+        android:text="Create Report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:id="@+id/Bcreatereport"
+        android:onClick="onCreateReport"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

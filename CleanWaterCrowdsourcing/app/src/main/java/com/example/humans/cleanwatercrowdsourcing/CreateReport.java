@@ -63,27 +63,62 @@ public class CreateReport extends AppCompatActivity {
         if (v.getId() == R.id.Bsubmitreport) {
             EditText location = (EditText) findViewById(R.id.ETwaterloc);
 
-            Object[] newreport = new Object[6];
-            newreport[0] = waterReports.size();
-            newreport[1] = Login.mEmailView.getText().toString();
-            newreport[2] = DateFormat.getDateTimeInstance().format(new Date());
-            newreport[3] = location.getText();
-            newreport[4] = watertypespinner.getSelectedItem().toString();
-            newreport[5] = waterconditionspinner.getSelectedItem().toString();
-            waterReports.add(newreport);
+//            Object[] newreport = new Object[6];
+//            newreport[0] = waterReports.size();
+//            newreport[1] = Login.mEmailView.getText().toString();
+//            newreport[2] = DateFormat.getDateTimeInstance().format(new Date());
+//            newreport[3] = location.getText();
+//            newreport[4] = watertypespinner.getSelectedItem().toString();
+//            newreport[5] = waterconditionspinner.getSelectedItem().toString();
+//            waterReports.add(newreport);
 
-            //SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
-            //String allreports = loadReports.getString("Water Reports", "");
+            SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
 
-            String allreports = "";
-            for (int i = 0; i < CreateReport.waterReports.size(); i++){
+
+
+
+
+            int numofReports = loadReports.getInt("number of reports", 0);
+            String allreports = loadReports.getString("Water Reports", "");
+            String reportID = loadReports.getString("Report ID: ", "");
+            String reporter = loadReports.getString("Reporter: ", "");
+            String time = loadReports.getString("Time: ", "");
+            String waterLocation = loadReports.getString("Location: ", "");
+            String waterType = loadReports.getString("Water Type: " , "");
+            String waterCondition = loadReports.getString("Water Condition: ", "");
+
+            numofReports++;
+            reportID += numofReports + ", ";
+            reporter += Login.mEmailView.getText().toString() + ", ";
+            time += DateFormat.getDateTimeInstance().format(new Date()) + "; ";
+            waterLocation += location.getText() + "; ";
+            waterType += watertypespinner.getSelectedItem().toString() + ", ";
+            waterCondition += waterconditionspinner.getSelectedItem().toString() + ", ";
+
+
+            String[] reportIds = reportID.split(", ");
+            String[] reporters = reporter.split(", ");
+            String[] times = time.split("; ");
+            String[] locations = waterLocation.split("; ");
+            String[] watertypes = waterType.split(", ");
+            String[] waterconditions = waterCondition.split(", ");
+
+
+            for (int i = 0; i < reportIds.length; i++){
                 allreports += "\n"
-                        + "Report ID: " + CreateReport.waterReports.get(i)[0] + "\n"
-                        + "Reporter: " + CreateReport.waterReports.get(i)[1] + "\n"
-                        + "Time: " + CreateReport.waterReports.get(i)[2] + "\n"
-                        + "Location: " +  CreateReport.waterReports.get(i)[3] + "\n"
-                        + "Water Type: " +  CreateReport.waterReports.get(i)[4] + "\n"
-                        + "Water Condition: " +  CreateReport.waterReports.get(i)[5] + "\n \n";
+                        + "Report ID: " + reportIds[i] + "\n"
+                        + "Reporter: " + reporters[i] + "\n"
+                        + "Time: " + times[i] + "\n"
+                        + "Location: " +  locations[i] + "\n"
+                        + "Water Type: " +  watertypes[i] + "\n"
+                        + "Water Condition: " +  waterconditions[i] + "\n \n";
+
+//                reportID += CreateReport.waterReports.get(i)[0] + ", ";
+//                reporter += CreateReport.waterReports.get(i)[1] + ", ";
+//                time += CreateReport.waterReports.get(i)[2] + ", ";
+//                waterLocation += CreateReport.waterReports.get(i)[3] + "; ";
+//                waterType +=CreateReport.waterReports.get(i)[4] + ", ";
+//                waterCondition += CreateReport.waterReports.get(i)[5] + ", ";
             }
 
 
@@ -91,7 +126,18 @@ public class CreateReport extends AppCompatActivity {
             SharedPreferences saveReports = getSharedPreferences(SAVENAME, MODE_PRIVATE);
             SharedPreferences.Editor editor = saveReports.edit();
 
-            editor.putString("Water Reports", allreports);
+            editor.putString("all reports", allreports);
+
+
+            editor.putInt("number of reports", numofReports);
+
+            editor.putString("Report ID: ", reportID);
+            editor.putString("Reporter: ", reporter);
+            editor.putString("Time: ", time);
+            editor.putString("Location: ", waterLocation);
+            editor.putString("Water Type: " , waterType);
+            editor.putString("Water Condition: ", waterCondition);
+
             editor.apply();
 
 
