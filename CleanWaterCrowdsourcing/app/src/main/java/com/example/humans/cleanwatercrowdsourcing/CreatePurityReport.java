@@ -17,6 +17,7 @@ import java.util.Date;
 
 /**
  * Created by omegahaileyesus on 3/28/17.
+ * activity for creating purity report, not accessible by USER class
  */
 
 public class CreatePurityReport extends AppCompatActivity {
@@ -32,7 +33,7 @@ public class CreatePurityReport extends AppCompatActivity {
 
 
         waterconditionspinner = (Spinner) findViewById(R.id.SPpcondition);
-        ArrayAdapter wcadapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Safe", "Treatable", "Unsafe"));
+        @SuppressWarnings("Convert2Diamond") ArrayAdapter wcadapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, Arrays.asList("Safe", "Treatable", "Unsafe"));
         wcadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         waterconditionspinner.setAdapter(wcadapter);
 

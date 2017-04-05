@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
-        android:text="Logout"
+        android:text="@string/Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Blogout"
@@ -13,18 +14,16 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Welcome user!"
+        android:text="@string/WelcomeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/TVwelcome"
-        android:layout_weight="1"
         android:textSize="36sp"
         android:layout_marginTop="42dp"
         android:layout_below="@+id/Blogout"
         android:layout_toStartOf="@+id/Blogout" />
 
     <Button
-        android:text="Edit Profile"
+        android:text="@string/edit_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Beditprofile"
@@ -33,7 +32,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Load Data \n and \n View Reports"
+        android:text="@string/load_data_n_and_n_view_reports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/Bcreatereport"
@@ -43,17 +42,18 @@
         android:onClick="onViewReports" />
 
     <Button
-        android:text="View Map"
+        android:text="@string/view_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/Bcreatereport"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="14dp"
         android:id="@+id/Bviewmap"
-        android:onClick="onViewMap" />
+        android:onClick="onViewMap"
+        tools:ignore="RelativeOverlap" />
 
     <Button
-        android:text="Create Report"
+        android:text="@string/create_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="26dp"
@@ -63,7 +63,7 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="View History Graph"
+        android:text="@string/view_history_graph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Bviewreports"
@@ -72,7 +72,7 @@
         android:onClick="onViewHistory" />
 
     <Button
-        android:text="Create \n Purity report"
+        android:text="@string/create_n_purity_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/Bviewreports"
@@ -82,7 +82,7 @@
         android:onClick="onCreatePurity" />
 
     <Button
-        android:text="View \n purity reports"
+        android:text="@string/view_n_purity_reports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Bviewpurity"

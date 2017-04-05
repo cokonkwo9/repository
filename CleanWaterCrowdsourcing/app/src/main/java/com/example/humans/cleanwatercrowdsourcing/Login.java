@@ -2,6 +2,7 @@ package com.example.humans.cleanwatercrowdsourcing;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.app.ProgressDialog;
@@ -42,8 +43,8 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>, View.OnClickListener {
-    private static final String TAG = "LoginTAG";
-    private FirebaseAuth mAuth;
+    // --Commented out by Inspection (4/4/17, 7:42 PM):private static final String TAG = "LoginTAG";
+    // --Commented out by Inspection (4/4/17, 7:42 PM):private FirebaseAuth mAuth;
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -56,22 +57,25 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
+// --Commented out by Inspection START (4/4/17, 7:42 PM):
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
+// --Commented out by Inspection STOP (4/4/17, 7:42 PM)
 
     // UI references.
+    @SuppressLint("StaticFieldLeak")
     public static AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
-    Button loginButton;
+    private Button loginButton;
     private View mProgressView;
     private View mLoginFormView;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
     public static String usertype;
-    public Spinner spinner;
+    private Spinner spinner;
     public static String username;
 
 
@@ -93,7 +97,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
 
 
         spinner = (Spinner) findViewById(R.id.SPtype);
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Manager", "Worker", "User", "Admin"));
+        @SuppressWarnings("Convert2Diamond") ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, Arrays.asList("Manager", "Worker", "User", "Admin"));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -206,21 +210,25 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
 
 
 
+// --Commented out by Inspection START (4/4/17, 7:43 PM):
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
         return email.equals("user");
     }
+// --Commented out by Inspection STOP (4/4/17, 7:43 PM)
 
+// --Commented out by Inspection START (4/4/17, 7:42 PM):
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
         return password.equals("pass");
     }
+// --Commented out by Inspection STOP (4/4/17, 7:42 PM)
 
     /**
      * Shows the progress UI and hides the login form.
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    private void showProgress(final boolean show) {
+    private void showProgress(@SuppressWarnings("SameParameterValue") final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
         // for very easy animations. If available, use these APIs to fade-in
         // the progress spinner.
@@ -305,22 +313,25 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
         };
 
         int ADDRESS = 0;
-        int IS_PRIMARY = 1;
+        // --Commented out by Inspection (4/4/17, 7:43 PM):int IS_PRIMARY = 1;
     }
 
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    @SuppressWarnings("unused")
+    private class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;
 
+// --Commented out by Inspection START (4/4/17, 7:43 PM):
         UserLoginTask(String email, String password) {
             mEmail = email;
             mPassword = password;
         }
+// --Commented out by Inspection STOP (4/4/17, 7:43 PM)
 
         @Override
         protected Boolean doInBackground(Void... params) {

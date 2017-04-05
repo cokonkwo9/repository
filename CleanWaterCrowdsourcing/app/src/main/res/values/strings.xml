@@ -4,14 +4,8 @@
     <string name="title_activity_login">Login</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
@@ -21,4 +15,41 @@
     <string name="title_activity_worker">Worker</string>
     <string name="title_activity_manager">Manager</string>
     <string name="title_activity_administrator">Administrator</string>
+    <string name="location">Location: (x,y)</string>
+    <string name="back">Back</string>
+    <string name="Logout">Logout</string>
+    <string name="PPM">PPM</string>
+    <string name="WelcomeUser">Welcome User!</string>
+    <string name="Whattograph">What do you want to graph?</string>
+    <string name="month">Month</string>
+    <string name="usertype">Usertype:</string>
+    <string name="display_graph">Display Graph</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="water_condition">Water Condition:</string>
+    <string name="type_of_water">Type of Water:</string>
+    <string name="textview">TextView</string>
+    <string name="load_data_n_and_n_view_reports">Load Data \n and \n View Reports</string>
+    <string name="year">Year:</string>
+    <string name="name">Name</string>
+    <string name="virus_ppm">Virus PPM:</string>
+    <string name="go_home">Go Home</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="view_map">View Map</string>
+    <string name="login">Login</string>
+    <string name="house_address">House Address:</string>
+    <string name="_2017">2017</string>
+    <string name="password">Password</string>
+    <string name="contaminant_ppm">Contaminant PPM:</string>
+    <string name="create_report">Create Report</string>
+    <string name="save_data_n_and_n_submit">Save Data \n and \n Submit</string>
+    <string name="clean_water_crowdsourcing">Clean Water Crowdsourcing</string>
+    <string name="view_history_graph">View History Graph</string>
+    <string name="sign_in">Sign in</string>
+    <string name="create_n_purity_report">Create \n Purity report</string>
+    <string name="save_data_n_and_n_submit_report">Save Data \n and \n Submit report</string>
+    <string name="select_user_type">Select User Type:</string>
+    <string name="view_n_purity_reports">View \n purity reports</string>
+
+
 </resources>

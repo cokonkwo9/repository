@@ -11,13 +11,13 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 
 /**
  * Created by omegahaileyesus on 3/29/17.
+ * class for displaying graph only managers+ accessible
  */
 
 public class DisplayGraph extends AppCompatActivity {
 
-    LineGraphSeries<DataPoint> series;
-    private String graphtype = ViewHistoryGraph.graphtype;
-    private String graphyear = ViewHistoryGraph.graphyear;
+    private final String graphtype = ViewHistoryGraph.graphtype;
+    private final String graphyear = ViewHistoryGraph.graphyear;
 
 
     @Override
@@ -38,23 +38,23 @@ public class DisplayGraph extends AppCompatActivity {
 
         SharedPreferences loadReports = getSharedPreferences("MySavedPurityReports", MODE_PRIVATE);
 
-        int numofReports = loadReports.getInt("number of reports", 0);
+        //int numofReports = loadReports.getInt("number of reports", 0);
         String reportID = loadReports.getString("Report ID: ", "");
-        String reporter = loadReports.getString("Reporter: ", "");
+        //String reporter = loadReports.getString("Reporter: ", "");
         String time = loadReports.getString("Time: ", "");
-        String waterLocation = loadReports.getString("Location: ", "");
-        String virusPPM = loadReports.getString("Virus PPM: " , "");
+        //String waterLocation = loadReports.getString("Location: ", "");
+        String virusPPM = loadReports.getString("Virus PPM: " , "0");
 
 
         System.out.println("virusPPM = " + virusPPM);
 
-        String contamPPM = loadReports.getString("Contaminant PPM: ", "");
+        String contamPPM = loadReports.getString("Contaminant PPM: ", "0");
 
 
         String[] reportIds = reportID.split(", ");
-        String[] reporters = reporter.split(", ");
+        //String[] reporters = reporter.split(", ");
         String[] times = time.split("; ");
-        String[] locations = waterLocation.split("; ");
+        //String[] locations = waterLocation.split("; ");
         String[] virusppms = virusPPM.split(", ");
         String[] contamppms = contamPPM.split(", ");
 
@@ -131,12 +131,12 @@ public class DisplayGraph extends AppCompatActivity {
         x = 0.0;
 
         GraphView graph = (GraphView) findViewById(R.id.graph);
-        series = new LineGraphSeries<DataPoint>();
+        @SuppressWarnings("Convert2Diamond") LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>();
 
-        for (int i = 0; i < data.length; i++){
+        for (double aData : data) {
             x += 1;
-            y = data[i];
-            series.appendData(new DataPoint(x,y), true, data.length);
+            y = aData;
+            series.appendData(new DataPoint(x, y), true, data.length);
         }
 
         graph.addSeries(series);

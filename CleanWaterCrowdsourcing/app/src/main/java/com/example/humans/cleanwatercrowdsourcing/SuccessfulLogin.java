@@ -10,10 +10,11 @@ import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * Created by omegahaileyesus on 2/14/17.
+ * class for successful login activity
  */
 
 public class SuccessfulLogin extends AppCompatActivity {
-    FirebaseAuth fbAuth;
+    // --Commented out by Inspection (4/4/17, 7:44 PM):FirebaseAuth fbAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

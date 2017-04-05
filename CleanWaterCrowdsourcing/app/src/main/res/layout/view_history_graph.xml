@@ -13,7 +13,7 @@
      android:id="@+id/SPgraphtype" />
 
  <TextView
-     android:text="What do you want to graph?"
+     android:text="@string/Whattograph"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:layout_alignBottom="@+id/SPgraphtype"
@@ -23,7 +23,7 @@
      android:id="@+id/TVgraphtype" />
 
  <Button
-     android:text="Display Graph"
+     android:text="@string/display_graph"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:layout_marginBottom="146dp"
@@ -33,7 +33,7 @@
      android:layout_centerHorizontal="true" />
 
  <TextView
-     android:text="Year:"
+     android:text="@string/year"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:layout_below="@+id/SPgraphtype"
@@ -42,6 +42,7 @@
      android:id="@+id/TVyear" />
 
  <EditText
+     android:labelFor="@+id/ETyear"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:inputType="textPersonName"
@@ -50,5 +51,5 @@
      android:layout_alignStart="@+id/TVyear"
      android:layout_marginTop="13dp"
      android:id="@+id/ETyear"
-     android:text="2017" />
+     android:text="@string/_2017" />
 </RelativeLayout>

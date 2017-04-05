@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 /**
  * Created by omegahaileyesus on 3/28/17.
+ * class for viewing list of all purity reports
  */
 
 public class ViewPurityReport extends AppCompatActivity {

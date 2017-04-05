@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 /**
  * Created by omegahaileyesus on 3/7/17.
+ * class for viewing all water reports
  */
 
 public class ViewReports extends AppCompatActivity {
@@ -17,23 +18,11 @@ public class ViewReports extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_reports);
 
-        SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
-        //loadReports.edit().clear().commit();
-
-
-        String allreports = loadReports.getString("all reports", "");
-
-        int numofReports = loadReports.getInt("number of reports", 0);
-
-        String reportID = loadReports.getString("Report ID: ", "");
-        String reporter = loadReports.getString("Reporter: ", "");
-        String time = loadReports.getString("Time: ", "");
-        String waterLocation = loadReports.getString("Location: ", "");
-        String waterType = loadReports.getString("Water Type: " , "");
-        String waterCondition = loadReports.getString("Water Condition: ", "");
 
 
 
+        Object[] reps = viewReports();
+        String allreports = (String) reps[0];
 
 
         TextView reports = (TextView) findViewById(R.id.TVreports);
@@ -59,5 +48,28 @@ public class ViewReports extends AppCompatActivity {
         //reports.setText(allreports);
         reports.setText(allreports);
         //Toast.makeText(SuccessfulLogin.this, "Login Successful",Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    public Object[] viewReports(){
+        SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
+
+
+        String allreports = loadReports.getString("all reports", "");
+
+        int numofReports = loadReports.getInt("number of reports", 0);
+
+//        String reportID = loadReports.getString("Report ID: ", "");
+//        String reporter = loadReports.getString("Reporter: ", "");
+//        String time = loadReports.getString("Time: ", "");
+//        String waterLocation = loadReports.getString("Location: ", "");
+//        String waterType = loadReports.getString("Water Type: " , "");
+//        String waterCondition = loadReports.getString("Water Condition: ", "");
+
+        Object[] reps = new Object[2];
+        reps[0] = allreports;
+        reps[1] = numofReports;
+        return reps;
     }
 }

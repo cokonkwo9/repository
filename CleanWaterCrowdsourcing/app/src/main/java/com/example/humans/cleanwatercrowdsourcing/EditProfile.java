@@ -14,15 +14,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Arrays;
 
 /**
+ *
  * Created by omegahaileyesus on 2/28/17.
+ * class for editing profile activity
  */
 
 public class EditProfile extends AppCompatActivity {
 
-    public static String address;
-    public static String location;
-    public Spinner spusertype;
-    public ArrayAdapter adapter;
+    private static String address;
+    private static String location;
+    private Spinner spusertype;
 
 
     @Override
@@ -48,18 +49,28 @@ public class EditProfile extends AppCompatActivity {
         spusertype = (Spinner) findViewById(R.id.SPusertype);
 
 
-        if (Login.usertype.equals("User")){
-            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("User", "Worker", "Manager", "Admin"));
+        ArrayAdapter adapter;
+        switch (Login.usertype) {
+            case "User":
+                //noinspection Convert2Diamond
+                adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Arrays.asList("User", "Worker", "Manager", "Admin"));
 
-        } else if (Login.usertype.equals("Worker")){
-            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Worker", "User", "Manager", "Admin"));
+                break;
+            case "Worker":
+                //noinspection Convert2Diamond
+                adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Arrays.asList("Worker", "User", "Manager", "Admin"));
 
-        } else if (Login.usertype.equals("Manager")){
-            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Manager", "User", "Worker", "Admin"));
+                break;
+            case "Manager":
+                //noinspection Convert2Diamond
+                adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Arrays.asList("Manager", "User", "Worker", "Admin"));
 
-        } else {
-            adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Admin", "User", "Worker", "Manger"));
+                break;
+            default:
+                //noinspection Convert2Diamond
+                adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Arrays.asList("Admin", "User", "Worker", "Manger"));
 
+                break;
         }
 
 
@@ -71,11 +82,11 @@ public class EditProfile extends AppCompatActivity {
         //enterusertype.setText(Login.usertype);
 //
 //
-        EditText enterhouse = (EditText) findViewById(R.id.EThouseaddress);
+        //EditText enterhouse = (EditText) findViewById(R.id.EThouseaddress);
 //        enterhouse.setText(smalluserinfo.get("house address"), TextView.BufferType.EDITABLE);
 //        enterhouse.setText();
 //
-        EditText enterlocation = (EditText) findViewById(R.id.ETlocation);
+        //EditText enterlocation = (EditText) findViewById(R.id.ETlocation);
 //        enterlocation.setText(smalluserinfo.get("location"), TextView.BufferType.EDITABLE);
 //
 //

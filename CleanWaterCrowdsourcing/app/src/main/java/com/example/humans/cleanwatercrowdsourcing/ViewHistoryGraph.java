@@ -14,6 +14,7 @@ import java.util.Arrays;
 
 /**
  * Created by omegahaileyesus on 3/28/17.
+ * class for viewing graph, account must enter data desired
  */
 
 public class ViewHistoryGraph extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class ViewHistoryGraph extends AppCompatActivity {
 
 
         graphtypespinner = (Spinner) findViewById(R.id.SPgraphtype);
-        ArrayAdapter wcadapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, Arrays.asList("Virus", "Contaminant"));
+        @SuppressWarnings("Convert2Diamond") ArrayAdapter wcadapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, Arrays.asList("Virus", "Contaminant"));
         wcadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         graphtypespinner.setAdapter(wcadapter);
 

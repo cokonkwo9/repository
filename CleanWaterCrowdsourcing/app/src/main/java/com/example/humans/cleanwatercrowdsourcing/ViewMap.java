@@ -10,16 +10,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by omegahaileyesus on 3/14/17.
+ * class for viewing geographic map of water reports
  */
 
 public class ViewMap extends AppCompatActivity implements OnMapReadyCallback {
-    GoogleMap mGoogleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +30,7 @@ public class ViewMap extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap googleMap){
-        mGoogleMap = googleMap;
-        ArrayList<LatLng> waterSources = new ArrayList<>();
+        //ArrayList<LatLng> waterSources = new ArrayList<>();
 
 
 
@@ -40,9 +38,9 @@ public class ViewMap extends AppCompatActivity implements OnMapReadyCallback {
 
         int numofReports = loadReports.getInt("number of reports", 0);
 
-        String reportID = loadReports.getString("Report ID: ", "");
-        String reporter = loadReports.getString("Reporter: ", "");
-        String time = loadReports.getString("Time: ", "");
+        //String reportID = loadReports.getString("Report ID: ", "");
+        //String reporter = loadReports.getString("Reporter: ", "");
+        //String time = loadReports.getString("Time: ", "");
         String waterLocation = loadReports.getString("Location: ", "");
         String waterType = loadReports.getString("Water Type: " , "");
         String waterCondition = loadReports.getString("Water Condition: ", "");
@@ -67,13 +65,13 @@ public class ViewMap extends AppCompatActivity implements OnMapReadyCallback {
 
 
 
-            List<String> coords = Arrays.asList(locations[i].toString().split(", "));
+            List<String> coords = Arrays.asList(locations[i].split(", "));
             int xcoord = Integer.parseInt(coords.get(0));
             int ycoord = Integer.parseInt(coords.get(1));
 
 
-            waterSources.add(new LatLng(xcoord,ycoord));
-            mGoogleMap.addMarker(new MarkerOptions().title(rep).position(new LatLng(xcoord,ycoord)));
+            //waterSources.add(new LatLng(xcoord,ycoord));
+            googleMap.addMarker(new MarkerOptions().title(rep).position(new LatLng(xcoord,ycoord)));
 
         }
 

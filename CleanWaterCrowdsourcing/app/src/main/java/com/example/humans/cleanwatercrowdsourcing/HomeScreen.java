@@ -2,13 +2,10 @@ package com.example.humans.cleanwatercrowdsourcing;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -43,13 +40,13 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     //go to register screen
-    public void goToRegisterScreen(View view) {
+    public void goToRegisterScreen(@SuppressWarnings("UnusedParameters") View v) {
         Intent registerScreen = new Intent(HomeScreen.this, Register.class);
         startActivity(registerScreen);
     }
 
     //go to login screen
-    public void goToLoginScreen(View view) {
+    public void goToLoginScreen(@SuppressWarnings("UnusedParameters") View v) {
         Intent loginScreen = new Intent(HomeScreen.this, Login.class);
         startActivity(loginScreen);
     }

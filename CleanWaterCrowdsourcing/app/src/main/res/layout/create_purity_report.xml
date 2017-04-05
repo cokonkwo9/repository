@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Location: (x, y)"
+        android:text="@string/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -14,6 +14,7 @@
         android:id="@+id/TVploc" />
 
     <EditText
+        android:labelFor="@+id/ETplocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -24,7 +25,7 @@
         android:id="@+id/ETplocation" />
 
     <TextView
-        android:text="Water Condition:"
+        android:text="@string/water_condition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
@@ -33,7 +34,7 @@
         android:layout_alignStart="@+id/TVploc" />
 
     <TextView
-        android:text="Virus PPM:"
+        android:text="@string/virus_ppm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SPpcondition"
@@ -48,10 +49,11 @@
         android:ems="10"
         android:layout_centerVertical="true"
         android:layout_alignEnd="@+id/ETplocation"
-        android:id="@+id/ETpvirus" />
+        android:id="@+id/ETpvirus"
+        android:labelFor="@id/ETpvirus"/>
 
     <TextView
-        android:text="Contaminant PPM:"
+        android:text="@string/contaminant_ppm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ETpvirus"
@@ -67,10 +69,12 @@
         android:layout_below="@+id/TVpcontam"
         android:layout_alignStart="@+id/ETpvirus"
         android:layout_marginTop="12dp"
-        android:id="@+id/ETpcontam" />
+        android:id="@+id/ETpcontam"
+        android:labelFor="@id/ETpcontam"
+        />
 
     <Button
-        android:text="Save Data \n and \n Submit report"
+        android:text="@string/save_data_n_and_n_submit_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
