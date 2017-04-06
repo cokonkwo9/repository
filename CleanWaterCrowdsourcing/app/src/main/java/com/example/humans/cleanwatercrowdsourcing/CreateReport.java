@@ -82,7 +82,7 @@ public class CreateReport extends AppCompatActivity {
     /**
      * method for sharing water report to sharedpref
      */
-    public void onShareReport(){
+    private void onShareReport(){
 
 
 //            Object[] newreport = new Object[6];
@@ -124,7 +124,6 @@ public class CreateReport extends AppCompatActivity {
 
 
         for (int i = 0; i < reportIds.length; i++){
-
 
 
             allreports += "\n"
