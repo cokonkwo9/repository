@@ -116,7 +116,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
         }
     }
 
-    private void login() {
+    public void login() {
         String usernameText = mEmailView.getText().toString().trim();
         username = usernameText;
         String passwordText = mPasswordView.getText().toString().trim();

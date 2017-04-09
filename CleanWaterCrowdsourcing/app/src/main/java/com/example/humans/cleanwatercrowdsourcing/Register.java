@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     private EditText password;
     private Button register_button;
     private ProgressDialog progressDialog;
-
+    private static int uniqueUsernameToken = 0;
     // --Commented out by Inspection (4/4/17, 7:44 PM):private FirebaseAnalytics mFirebaseAnalytics;
     //private static HashMap<String, Map<String, String>> bigUserInfo;
 
@@ -80,11 +80,11 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
      * method for registering new users
      */
     private void register() {
-        final String usernameText = username.getText().toString().trim();
+        final String emailText = username.getText().toString().trim();
         String passwordText = password.getText().toString().trim();
 
         // username is empty
-        if (TextUtils.isEmpty(usernameText)) {
+        if (TextUtils.isEmpty(emailText)) {
             Toast.makeText(this, "Enter a username please", Toast.LENGTH_SHORT).show();
         }
         // password is empty
@@ -95,8 +95,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         progressDialog.setMessage("Registering . . .");
         progressDialog.show();
 
-
-        fbAuthentication.createUserWithEmailAndPassword(usernameText,passwordText)
+        String username = createUsernameFromEmail(emailText);
+        fbAuthentication.createUserWithEmailAndPassword(emailText,passwordText)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -127,6 +127,22 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
 
     }
+
+    public String createUsernameFromEmail(String email) {
+        if (!email.contains("@")) {
+            throw new IllegalArgumentException("Not a valid email.");
+        } else if (email == null) {
+            throw new NullPointerException();
+        }
+        int num = email.indexOf("@");
+        if (num < 6) {
+            throw new IllegalArgumentException("Username is too short");
+        }
+        String username = email.substring(0,num) + uniqueUsernameToken;
+        uniqueUsernameToken++;
+        return username;
+    }
+
 
     @Override
     public void onClick(View view) {

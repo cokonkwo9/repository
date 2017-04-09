@@ -25,3 +25,5 @@ public class ExampleInstrumentedTest {
         assertEquals("com.example.humans.cleanwatercrowdsourcing", appContext.getPackageName());
     }
 }
+
+
