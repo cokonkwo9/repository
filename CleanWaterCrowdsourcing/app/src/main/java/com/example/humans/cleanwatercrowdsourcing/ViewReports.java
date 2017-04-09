@@ -52,7 +52,7 @@ public class ViewReports extends AppCompatActivity {
 
 
 
-    public Object[] viewReports(){
+    private Object[] viewReports(){
         SharedPreferences loadReports = getSharedPreferences("MySavedReports", MODE_PRIVATE);
 
 

@@ -50,6 +50,7 @@
     <string name="save_data_n_and_n_submit_report">Save Data \n and \n Submit report</string>
     <string name="select_user_type">Select User Type:</string>
     <string name="view_n_purity_reports">View \n purity reports</string>
+    <string name="Save">Save</string>
 
 
 </resources>

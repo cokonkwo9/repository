@@ -163,7 +163,7 @@ public class SuccessfulLogin extends AppCompatActivity {
 
         if (v.getId() == R.id.Bviewpurity) {
 
-            if (!(Login.usertype.equals("User"))) {
+            if (!(Login.usertype.equals("User")) && !Login.usertype.equals("Worker")) {
                 Intent viewp = new Intent(SuccessfulLogin.this, ViewPurityReport.class);
                 FirebaseAuth.getInstance().signOut();
                 startActivity(viewp);
