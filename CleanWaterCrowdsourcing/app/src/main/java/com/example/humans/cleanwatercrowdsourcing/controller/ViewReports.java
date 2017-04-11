@@ -1,10 +1,12 @@
-package com.example.humans.cleanwatercrowdsourcing;
+package com.example.humans.cleanwatercrowdsourcing.controller;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
+
+import com.example.humans.cleanwatercrowdsourcing.R;
 
 /**
  * Created by omegahaileyesus on 3/7/17.

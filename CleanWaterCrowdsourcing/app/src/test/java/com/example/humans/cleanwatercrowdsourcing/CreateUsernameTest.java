@@ -1,5 +1,5 @@
 package com.example.humans.cleanwatercrowdsourcing;
-import com.example.humans.cleanwatercrowdsourcing.Register;
+import com.example.humans.cleanwatercrowdsourcing.controller.Register;
 
 import org.junit.Assert;
 import org.junit.Before;

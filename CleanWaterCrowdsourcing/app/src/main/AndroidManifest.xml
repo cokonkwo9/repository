@@ -30,7 +30,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".HomeScreen"
+            android:name=".controller.HomeScreen"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -39,42 +39,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SuccessfulLogin" />
+        <activity android:name=".controller.SuccessfulLogin" />
         <activity
-            android:name=".Login"
+            android:name=".controller.Login"
             android:label="@string/title_activity_login" />
-        <activity android:name=".EditProfile" />
+        <activity android:name=".controller.EditProfile" />
         <activity
-            android:name=".Register"
+            android:name=".controller.Register"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SuccessfulRegistration"
+            android:name=".controller.SuccessfulRegistration"
             android:label="@string/title_activity_successful_registration"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".User"
+            android:name=".model.User"
             android:label="@string/title_activity_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Worker"
+            android:name=".model.Worker"
             android:label="@string/title_activity_worker"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Manager"
+            android:name=".model.Manager"
             android:label="@string/title_activity_manager"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Administrator"
+            android:name=".model.Administrator"
             android:label="@string/title_activity_administrator"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".CreateReport" />
-        <activity android:name=".ViewReports" />
-        <activity android:name=".ViewMap" />
-        <activity android:name=".ViewHistoryGraph" />
-        <activity android:name=".CreatePurityReport" />
-        <activity android:name="ViewPurityReport" />
-        <activity android:name=".DisplayGraph" />
+        <activity android:name=".controller.CreateReport" />
+        <activity android:name=".controller.ViewReports" />
+        <activity android:name=".controller.ViewMap" />
+        <activity android:name=".controller.ViewHistoryGraph" />
+        <activity android:name=".controller.CreatePurityReport" />
+        <activity android:name=".controller.ViewPurityReport" />
+        <activity android:name=".controller.DisplayGraph" />
 
         <meta-data android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBzokohu9FNkuNcUG0Sr0hRrBW8uehAirA" />

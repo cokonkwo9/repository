@@ -1,9 +1,10 @@
-package com.example.humans.cleanwatercrowdsourcing;
+package com.example.humans.cleanwatercrowdsourcing.controller;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.humans.cleanwatercrowdsourcing.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;

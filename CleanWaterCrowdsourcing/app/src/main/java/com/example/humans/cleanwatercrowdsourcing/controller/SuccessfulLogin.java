@@ -1,4 +1,4 @@
-package com.example.humans.cleanwatercrowdsourcing;
+package com.example.humans.cleanwatercrowdsourcing.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.humans.cleanwatercrowdsourcing.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**

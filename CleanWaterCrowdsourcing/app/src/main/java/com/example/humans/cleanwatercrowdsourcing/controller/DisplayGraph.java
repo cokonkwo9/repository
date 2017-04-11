@@ -1,10 +1,11 @@
-package com.example.humans.cleanwatercrowdsourcing;
+package com.example.humans.cleanwatercrowdsourcing.controller;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.humans.cleanwatercrowdsourcing.R;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;

@@ -1,30 +1,14 @@
 package com.example.humans.cleanwatercrowdsourcing;
-import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.humans.cleanwatercrowdsourcing.controller.Login;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.example.humans.cleanwatercrowdsourcing.Register;
-import com.google.firebase.auth.FirebaseUser;
-import com.example.humans.cleanwatercrowdsourcing.*;
+import com.example.humans.cleanwatercrowdsourcing.controller.Register;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.concurrent.Executor;
-
-import static android.support.v4.content.ContextCompat.startActivity;
-import static com.example.humans.cleanwatercrowdsourcing.Login.mEmailView;
-import static java.security.AccessController.getContext;
 import static org.junit.Assert.*;
 
 
@@ -83,7 +67,7 @@ public class ExampleUnitTest {
         String usernameText = email1;
         String passwordText = password1;
         //FirebaseApp.initializeApp(reg);
-        //Intent registerScreen = new Intent(this, com.example.humans.cleanwatercrowdsourcing.Register.class);
+        //Intent registerScreen = new Intent(this, com.example.humans.cleanwatercrowdsourcing.controller.Register.class);
 //        application2 = application.getApplicationContext();
         //reg.onCreate(new Bundle());
         //fbAuthentication = FirebaseAuth.getInstance();

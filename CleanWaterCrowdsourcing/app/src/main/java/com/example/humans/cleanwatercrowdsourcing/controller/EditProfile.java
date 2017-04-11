@@ -1,4 +1,4 @@
-package com.example.humans.cleanwatercrowdsourcing;
+package com.example.humans.cleanwatercrowdsourcing.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.humans.cleanwatercrowdsourcing.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;

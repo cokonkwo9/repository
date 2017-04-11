@@ -1,4 +1,4 @@
-package com.example.humans.cleanwatercrowdsourcing;
+package com.example.humans.cleanwatercrowdsourcing.controller;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.humans.cleanwatercrowdsourcing.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.DateFormat;
