@@ -96,7 +96,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         progressDialog.setMessage("Registering . . .");
         progressDialog.show();
 
-        String username = createUsernameFromEmail(emailText);
+        @SuppressWarnings("UnusedAssignment") String username = createUsernameFromEmail(emailText);
         fbAuthentication.createUserWithEmailAndPassword(emailText,passwordText)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -132,7 +132,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
     public String createUsernameFromEmail(String email) {
         if (!email.contains("@")) {
             throw new IllegalArgumentException("Not a valid email.");
-        } else if (email == null) {
+        } else //noinspection ConstantConditions
+            if (email == null) {
             throw new NullPointerException();
         }
         int num = email.indexOf("@");

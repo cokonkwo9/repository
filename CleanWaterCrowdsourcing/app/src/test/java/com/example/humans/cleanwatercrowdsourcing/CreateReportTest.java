@@ -9,8 +9,10 @@ import org.junit.rules.ExpectedException;
 
 /**
  * Created by omegahaileyesus on 4/11/17.
+ * junit to test valid inputs to create water report
  */
 
+@SuppressWarnings("UnusedAssignment")
 public class CreateReportTest {
 
     private int reportID1;
@@ -76,7 +78,7 @@ public class CreateReportTest {
 
 
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    public final ExpectedException thrown = ExpectedException.none();
 
 
     @Test

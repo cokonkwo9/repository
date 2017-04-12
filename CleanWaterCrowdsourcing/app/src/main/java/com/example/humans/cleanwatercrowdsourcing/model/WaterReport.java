@@ -7,13 +7,17 @@ import java.util.Date;
 
 /**
  * Created by omegahaileyesus on 4/11/17.
+ * class for water report instance data
  */
 
+@SuppressWarnings("unused")
 public class WaterReport {
+    @SuppressWarnings("unused")
     public enum waterType{
         BOTTLED, WELL, STREAM, LAKE, SPRING, OTHER
     }
 
+    @SuppressWarnings("unused")
     public enum waterConditions{
         POTABLE, TREATABLE_CLEAR, TREATABLE_MUDDY, WASTE
     }
@@ -25,8 +29,8 @@ public class WaterReport {
     private String waterCondition;
     private String waterType;
     private LatLng location;
-    private String[] waterCons = {"Potable", "Treatable-Clear", "Treatable-Muddy", "Waste"};
-    private String[] waterTypes = {"Bottled", "Well", "Stram", "Lake", "Spring", "Other"};
+    private final String[] waterCons = {"Potable", "Treatable-Clear", "Treatable-Muddy", "Waste"};
+    private final String[] waterTypes = {"Bottled", "Well", "Stream", "Lake", "Spring", "Other"};
 
 
     public WaterReport(int reportID, String reporter, String waterCondition, String waterType) {
@@ -36,11 +40,11 @@ public class WaterReport {
         setWaterType(waterType);
     }
 
-    public LatLng getwaterLocation() {
+    public LatLng getWaterLocation() {
         return location;
     }
 
-    public void setwaterLocation(LatLng location) {
+    public void setWaterLocation(LatLng location) {
         this.location = location;
     }
 

@@ -9,15 +9,17 @@ import org.junit.rules.ExpectedException;
 
 /**
  * Created by Yotam on 4/9/17.
+ * junit to test valid username entries
  */
 
+@SuppressWarnings("UnusedAssignment")
 public class CreateUsernameTest {
 
-    String email1;
-    String email2;
-    String email3;
-    String email4;
-    String email5;
+    private String email1;
+    private String email2;
+    private String email3;
+    private String email4;
+    private String email5;
 
     @Before
     public void setUp() {
@@ -44,7 +46,7 @@ public class CreateUsernameTest {
     }
 
     @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    public final ExpectedException thrown = ExpectedException.none();
 
     @Test
     public void testNullPointerException() {

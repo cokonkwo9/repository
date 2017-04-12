@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.humans.cleanwatercrowdsourcing.R;
 
+@SuppressWarnings("unused")
 public class Manager extends AppCompatActivity {
 
     public String getUsername() {

@@ -43,6 +43,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
+@SuppressWarnings("unused")
 public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>, View.OnClickListener {
     // --Commented out by Inspection (4/4/17, 7:42 PM):private static final String TAG = "LoginTAG";
     // --Commented out by Inspection (4/4/17, 7:42 PM):private FirebaseAuth mAuth;
@@ -70,7 +71,9 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
     public static AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private Button loginButton;
+    @SuppressWarnings("CanBeFinal")
     private View mProgressView;
+    @SuppressWarnings("CanBeFinal")
     private View mLoginFormView;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog progressDialog;
@@ -171,6 +174,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
         getLoaderManager().initLoader(0, null, this);
     }
 
+    @SuppressLint("ObsoleteSdkInt")
     private boolean mayRequestContacts() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
@@ -228,6 +232,7 @@ public class Login extends AppCompatActivity implements LoaderCallbacks<Cursor>,
     /**
      * Shows the progress UI and hides the login form.
      */
+    @SuppressLint("ObsoleteSdkInt")
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(@SuppressWarnings("SameParameterValue") final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow

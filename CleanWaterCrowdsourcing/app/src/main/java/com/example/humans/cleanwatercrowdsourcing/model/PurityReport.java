@@ -6,10 +6,13 @@ import java.util.Date;
 
 /**
  * Created by omegahaileyesus on 4/11/17.
+ * class for purity report instance data
  */
 
+@SuppressWarnings("unused")
 public class PurityReport {
 
+    @SuppressWarnings("unused")
     public enum waterCondition {
         SAFE, TREATABLE, UNSAFE
     }
@@ -44,11 +47,11 @@ public class PurityReport {
         this.contaminantPPM = contaminantPPM;
     }
 
-    public LatLng getwaterLocation() {
+    public LatLng getWaterLocation() {
         return location;
     }
 
-    public void setwaterLocation(LatLng location) {
+    public void setWaterLocation(LatLng location) {
         this.location = location;
     }
 
