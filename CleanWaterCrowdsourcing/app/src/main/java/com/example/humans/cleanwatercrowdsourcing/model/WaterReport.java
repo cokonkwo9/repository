@@ -2,6 +2,7 @@ package com.example.humans.cleanwatercrowdsourcing.model;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -13,7 +14,7 @@ public class WaterReport {
         BOTTLED, WELL, STREAM, LAKE, SPRING, OTHER
     }
 
-    public enum waterCondition{
+    public enum waterConditions{
         POTABLE, TREATABLE_CLEAR, TREATABLE_MUDDY, WASTE
     }
 
@@ -24,8 +25,16 @@ public class WaterReport {
     private String waterCondition;
     private String waterType;
     private LatLng location;
+    private String[] waterCons = {"Potable", "Treatable-Clear", "Treatable-Muddy", "Waste"};
+    private String[] waterTypes = {"Bottled", "Well", "Stram", "Lake", "Spring", "Other"};
 
 
+    public WaterReport(int reportID, String reporter, String waterCondition, String waterType) {
+        setReportID(reportID);
+        setReporter(reporter);
+        setWaterCondition(waterCondition);
+        setWaterType(waterType);
+    }
 
     public LatLng getwaterLocation() {
         return location;
@@ -40,6 +49,9 @@ public class WaterReport {
     }
 
     public void setWaterType(String waterType) {
+        if (!Arrays.asList(waterTypes).contains(waterType)){
+            throw new IllegalArgumentException("Not a valid water type.");
+        }
         this.waterType = waterType;
     }
 
@@ -49,6 +61,10 @@ public class WaterReport {
     }
 
     public void setWaterCondition(String waterCondition) {
+        if (!Arrays.asList(waterCons).contains(waterCondition)){
+            throw new IllegalArgumentException("Not a valid water condition.");
+
+        }
         this.waterCondition = waterCondition;
     }
 
@@ -58,6 +74,9 @@ public class WaterReport {
     }
 
     public void setReportID(int reportID) {
+        if(reportID < 0){
+            throw new IllegalArgumentException("Not a valid ID.");
+        }
         this.reportID = reportID;
     }
 
@@ -67,6 +86,9 @@ public class WaterReport {
     }
 
     public void setReporter(String reporter) {
+        if (reporter.length() <= 0){
+            throw new IllegalArgumentException("Not a valid name.");
+        }
         this.reporter = reporter;
     }
 
