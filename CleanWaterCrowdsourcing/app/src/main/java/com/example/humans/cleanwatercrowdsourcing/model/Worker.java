@@ -11,39 +11,59 @@ import com.example.humans.cleanwatercrowdsourcing.R;
 
 @SuppressWarnings("unused")
 public class Worker extends AppCompatActivity {
-
+    /**
+     * method for getting username
+     */
     public String getUsername() {
         return username;
     }
-
+    /**
+     * method for setting username
+     * @param username - username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
     private String username;
-
+    /**
+     * method for getting password
+     */
     public String getPassword() {
         return password;
     }
-
+    /**
+     * method for setting password
+     * @param password - password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
     private String password;
-
+    /**
+     * method for getting usertype
+     */
     public String getUsertype() {
         return usertype;
     }
-
+    /**
+     * method for setting usertype
+     * @param usertype - usertype
+     */
     public void setUsertype(String usertype) {
         this.usertype = usertype;
     }
-
+    /**
+     * method for getting houseAddress
+     */
     public String getHouseAddress() {
         return houseAddress;
     }
-
+    /**
+     * method for setting houseAddress
+     * @param houseAddress - houseAddress
+     */
     public void setHouseAddress(String houseAddress) {
         this.houseAddress = houseAddress;
     }
