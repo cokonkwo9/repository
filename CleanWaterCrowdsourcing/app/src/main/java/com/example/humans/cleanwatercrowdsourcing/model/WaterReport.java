@@ -39,19 +39,29 @@ public class WaterReport {
         setWaterCondition(waterCondition);
         setWaterType(waterType);
     }
-
+    /**
+     * method for getting location
+     */
     public LatLng getWaterLocation() {
         return location;
     }
-
+    /**
+     * method for setting location
+     * @param location - location
+     */
     public void setWaterLocation(LatLng location) {
         this.location = location;
     }
-
+    /**
+     * method for getting waterType
+     */
     public String getWaterType() {
         return waterType;
     }
-
+    /**
+     * method for setting waterType
+     * @param waterType - waterType
+     */
     public void setWaterType(String waterType) {
         if (!Arrays.asList(waterTypes).contains(waterType)){
             throw new IllegalArgumentException("Not a valid water type.");
@@ -59,11 +69,16 @@ public class WaterReport {
         this.waterType = waterType;
     }
 
-
+    /**
+     * method for getting waterCondition
+     */
     public String getWaterCondition() {
         return waterCondition;
     }
-
+    /**
+     * method for setting waterCondition
+     * @param waterCondition - waterCondition
+     */
     public void setWaterCondition(String waterCondition) {
         if (!Arrays.asList(waterCons).contains(waterCondition)){
             throw new IllegalArgumentException("Not a valid water condition.");
@@ -72,11 +87,16 @@ public class WaterReport {
         this.waterCondition = waterCondition;
     }
 
-
+    /**
+     * method for getting reportID
+     */
     public int getReportID() {
         return reportID;
     }
-
+    /**
+     * method for setting reportID
+     * @param reportID - reportID
+     */
     public void setReportID(int reportID) {
         if(reportID < 0){
             throw new IllegalArgumentException("Not a valid ID.");
@@ -84,11 +104,16 @@ public class WaterReport {
         this.reportID = reportID;
     }
 
-
+    /**
+     * method for getting reporter
+     */
     public String getReporter() {
         return reporter;
     }
-
+    /**
+     * method for setting reporter
+     * @param reporter - reporter
+     */
     public void setReporter(String reporter) {
         if (reporter.length() <= 0){
             throw new IllegalArgumentException("Not a valid name.");
