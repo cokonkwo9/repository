@@ -129,6 +129,12 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
 
     }
 
+
+    /**
+     * method for creating a unique and valid username for new users and
+     * @param email User's email
+     * @return the User's new username
+     */
     public String createUsernameFromEmail(String email) {
         if (!email.contains("@")) {
             throw new IllegalArgumentException("Not a valid email.");

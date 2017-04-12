@@ -20,6 +20,8 @@ public class CreateUsernameTest {
     private String email3;
     private String email4;
     private String email5;
+    private String email6;
+    private String email7;
 
     @Before
     public void setUp() {
@@ -28,7 +30,19 @@ public class CreateUsernameTest {
         email3 = "vdnfefono@d.com";
         email4 = null;
         email5 = "jake@gmail.com";
+        email6 = "terryjohnsmithcarrybobbylibrarycandycornneckboyfishlip@yahoo.com";
+        email7 = "jnk413!!&*fd()@msn.com";
 
+
+    }
+
+    @Test
+    public void testSuperLongUsername() {
+        setUp();
+        Register register = new Register();
+        String username6 = register.createUsernameFromEmail(email6);
+
+        Assert.assertEquals(username6, "terryjohnsmithcarrybobbylibrarycandycornneckboyfishlip0");
 
     }
 
@@ -40,8 +54,21 @@ public class CreateUsernameTest {
         String username1 = register.createUsernameFromEmail(email1);
         String username3 = register.createUsernameFromEmail(email3);
 
-        Assert.assertEquals(username1, "jacob1230");
-        Assert.assertEquals(username3, "vdnfefono1");
+        Assert.assertEquals(username1, "jacob1231");
+        Assert.assertEquals(username3, "vdnfefono2");
+
+    }
+
+
+
+
+    @Test
+    public void testUsernameWithVariousKeys() {
+        setUp();
+        Register register = new Register();
+        String username7 = register.createUsernameFromEmail(email7);
+
+        Assert.assertEquals(username7, "jnk413!!&*fd()3");
 
     }
 
