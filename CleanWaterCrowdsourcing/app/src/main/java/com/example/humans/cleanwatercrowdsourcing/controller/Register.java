@@ -25,6 +25,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
 
+import static android.os.Build.VERSION_CODES.N;
+import static com.example.humans.cleanwatercrowdsourcing.R.string.email;
+import static com.google.android.gms.internal.zzapz.boo;
+
 
 public class Register extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth fbAuthentication;
@@ -151,7 +155,21 @@ public class Register extends AppCompatActivity implements View.OnClickListener{
         return username;
     }
 
+    public String generatePassword(String pass) {
+        int num = pass.length();
+        if (pass == null) {
+            throw new IllegalArgumentException("Password cannot be null");
+        }
 
+        if (num < 4){
+            throw new IllegalArgumentException("Password is too short");
+        } else {
+            if (num > 10) {
+                throw new IllegalArgumentException("Password is too short");
+            }
+        }
+        return pass;
+    }
     @Override
     public void onClick(View view) {
         if (view == register_button) {
